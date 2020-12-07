@@ -1,13 +1,24 @@
-from datetime import time
+import org.openqa.selenium.By;		
+import org.openqa.selenium.WebDriver;		
+import org.openqa.selenium.chrome.ChromeDriver;		
+import org.openqa.selenium.*;	
 
-from  selenium  import  webdriver
-from selenium.webdriver.common.by import By
+public class Form {				
+    public static void main(String[] args) {									
+    		
+    	// declaration and instantiation of objects/variables		
+        System.setProperty("webdriver.chrome.driver","D:\\Learnig_stuff\\chromedriver.exe");					
+        WebDriver driver = new ChromeDriver();					
+        		
+        String baseUrl = "https://prefeitura.pbh.gov.br/saude/licitacao/pregao-eletronico-151-2020";					
+        driver.get(baseUrl);					
 
-driver = webdriver.Chrome(executable_path = 'D:\\Learnig_stuff\\chromedriver.exe')
-driver.get('https://prefeitura.pbh.gov.br/saude/licitacao/pregao-eletronico-151-2020')
-# time.sleep(20)
-obej =driver.find_element_by_xpath("//span[@class='lbl-licitacao'][1]").text
-print(obej)
-lnk = driver.find_elements_by_tag_name("a")
-for i in lnk:
-    print(i.get_attribute('href'))
+       time.sleep(20)
+	 String  obj =driver.find_element_by_xpath("//p[contains(text(),'Registro de Preços pelo prazo de 12 meses, para aq')]").gettext();
+	System.out.println(obej);
+
+	List <WebElement> alllinks = driver.find_elements_by_tag_name("a");
+	for (WebElent link : alllinks ){
+	System.out.println(link.getText()+ "-"+ link.getAttribute("herf"));
+
+	}}
