@@ -1,0 +1,13 @@
+from datetime import time
+
+from  selenium  import  webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome(executable_path = 'D:\\Learnig_stuff\\chromedriver.exe')
+driver.get('https://prefeitura.pbh.gov.br/saude/licitacao/pregao-eletronico-151-2020')
+# time.sleep(20)
+obej =driver.find_element_by_xpath("//span[@class='lbl-licitacao'][1]").text
+print(obej)
+lnk = driver.find_elements_by_tag_name("a")
+for i in lnk:
+    print(i.get_attribute('href'))
